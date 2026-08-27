@@ -1,0 +1,12 @@
+.caja {
+  position: absolute;
+  inset: 0;
+}
+.caja canvas {
+  outline: none;
+}
+.respaldo {
+  position: absolute;
+  inset: 0;
+  background: var(--azul-tenue);
+}

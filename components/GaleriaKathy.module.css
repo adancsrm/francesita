@@ -1,0 +1,41 @@
+.tarjeta {
+  background: var(--blanco);
+  border: 1px solid var(--linea);
+  border-radius: var(--radio);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.tarjeta::before {
+  content: "";
+  display: block;
+  height: 5px;
+  background: linear-gradient(90deg, var(--azul), var(--rojo-vivo));
+}
+
+.figura {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background: var(--azul-tenue);
+  overflow: hidden;
+}
+.img {
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.tarjeta:hover .img {
+  transform: scale(1.08);
+}
+
+.cuerpo {
+  padding: 1.3rem 1.4rem 1.5rem;
+}
+.cuerpo h3 {
+  font-size: 1.02rem;
+  margin-bottom: 0.35rem;
+}
+.cuerpo p {
+  color: var(--tinta-suave);
+  font-size: var(--t-sm);
+  margin-bottom: 0;
+}

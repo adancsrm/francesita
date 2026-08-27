@@ -1,0 +1,89 @@
+.grid {
+  margin-top: 0;
+}
+
+.tarjeta {
+  background: var(--blanco);
+  border: 1px solid var(--linea);
+  border-radius: var(--radio);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0);
+  transition:
+    box-shadow var(--resorte),
+    border-color var(--transicion);
+}
+.tarjeta::before {
+  content: "";
+  display: block;
+  height: 5px;
+  background: linear-gradient(90deg, var(--azul), var(--rojo-vivo));
+}
+.tarjeta:hover,
+.tarjeta:focus-visible {
+  box-shadow: var(--sombra-alta);
+  border-color: #ccd3ea;
+}
+
+.figura {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background: var(--azul-tenue);
+  overflow: hidden;
+}
+
+.verMas {
+  position: absolute;
+  bottom: 0.8rem;
+  left: 50%;
+  transform: translate(-50%, 12px);
+  opacity: 0;
+  background: var(--azul-noche);
+  color: var(--blanco);
+  font-family: var(--display);
+  font-size: var(--t-xs);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  transition:
+    opacity var(--transicion),
+    transform var(--transicion);
+  pointer-events: none;
+}
+.tarjeta:hover .verMas,
+.tarjeta:focus-visible .verMas {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.cuerpo {
+  padding: 1.5rem 1.5rem 1.7rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.cuerpo h3 {
+  margin-bottom: 0.5rem;
+}
+.cuerpo p {
+  color: var(--tinta-suave);
+  font-size: var(--t-sm);
+}
+.pie {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--linea);
+  font-family: var(--display);
+  font-size: var(--t-sm);
+  font-weight: 600;
+  color: var(--azul);
+}
+
+.cargando {
+  position: absolute;
+  inset: 0;
+  background: var(--azul-tenue);
+}

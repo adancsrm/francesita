@@ -1,0 +1,27 @@
+.tarjeta {
+  position: relative;
+  isolation: isolate;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  will-change: transform;
+}
+
+.foco {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    280px circle at var(--mx, 50%) var(--my, 0%),
+    rgba(44, 59, 126, 0.14),
+    transparent 65%
+  );
+  transition: opacity 0.4s ease;
+}
+
+.tarjeta:hover .foco {
+  opacity: 1;
+}

@@ -1,0 +1,94 @@
+.seccion {
+  position: relative;
+  background: linear-gradient(155deg, var(--azul) 0%, var(--azul-noche) 100%);
+  color: #edeff8;
+  overflow: hidden;
+}
+.seccion :global(h2),
+.seccion :global(h3) {
+  color: var(--blanco);
+}
+
+.brillo {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(60% 90% at 90% 0%, rgba(236, 31, 38, 0.12), transparent 60%),
+    radial-gradient(50% 70% at 0% 100%, rgba(255, 255, 255, 0.06), transparent 65%);
+}
+
+.encabezado {
+  position: relative;
+  max-width: 62ch;
+  margin-bottom: 2.6rem;
+}
+.encabezado p {
+  color: #d3d8ec;
+  font-size: var(--t-md);
+  margin-bottom: 0;
+}
+
+.pista {
+  position: relative;
+}
+
+.linea {
+  position: absolute;
+  top: 1.65rem;
+  left: 2.6rem;
+  right: 0;
+  height: 2px;
+  background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.55) 0 6px, transparent 6px 12px);
+  transform-origin: left;
+}
+
+.lista {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.4rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.paso {
+  position: relative;
+  padding-top: 2.6rem;
+}
+
+.numero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--rojo-vivo);
+}
+
+.paso h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.35rem;
+}
+.paso p {
+  font-size: var(--t-sm);
+  margin: 0;
+  color: #d3d8ec;
+}
+
+@media (max-width: 1024px) {
+  .lista {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+  }
+  .linea {
+    display: none;
+  }
+}
+@media (max-width: 680px) {
+  .lista {
+    grid-template-columns: 1fr;
+  }
+}

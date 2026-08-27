@@ -1,0 +1,123 @@
+.fondo {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  background: rgba(13, 18, 48, 0.72);
+  backdrop-filter: blur(6px);
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+}
+
+.panel {
+  position: relative;
+  width: min(920px, 100%);
+  background: var(--crema);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra-alta);
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  overflow: hidden;
+  max-height: min(600px, 90vh);
+}
+
+.escena {
+  position: relative;
+  background: var(--azul-tenue);
+  min-height: 320px;
+}
+
+.info {
+  padding: clamp(1.6rem, 3vw, 2.6rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.info h3 {
+  margin-top: 0.2rem;
+}
+.info p {
+  color: var(--tinta-suave);
+}
+.pie {
+  margin-top: auto;
+  padding-top: 1rem;
+  font-family: var(--display);
+  font-weight: 700;
+  color: var(--azul);
+}
+
+.cerrar {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--azul);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: background var(--transicion);
+}
+.cerrar:hover {
+  background: var(--blanco);
+}
+
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--azul);
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition:
+    background var(--transicion),
+    transform var(--transicion);
+}
+.nav:hover {
+  background: var(--blanco);
+  transform: translateY(-50%) scale(1.08);
+}
+.prev {
+  left: 1rem;
+}
+.next {
+  right: 1rem;
+}
+
+.contador {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  font-family: var(--display);
+  font-size: var(--t-xs);
+  font-weight: 700;
+  color: var(--tinta-suave);
+  background: rgba(255, 255, 255, 0.85);
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+}
+
+@media (max-width: 720px) {
+  .panel {
+    grid-template-columns: 1fr;
+    max-height: 92vh;
+    overflow-y: auto;
+  }
+  .escena {
+    min-height: 240px;
+  }
+}

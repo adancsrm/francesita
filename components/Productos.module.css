@@ -1,0 +1,17 @@
+.seccion {
+  background: var(--azul-tenue);
+}
+
+.encabezado {
+  max-width: 62ch;
+  margin-bottom: 2.6rem;
+}
+.encabezado p {
+  color: var(--tinta-suave);
+  font-size: var(--t-md);
+  margin-bottom: 0;
+}
+
+.cta {
+  margin-top: 2.2rem;
+}

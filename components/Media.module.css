@@ -1,0 +1,35 @@
+.marco {
+  position: relative;
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  overflow: hidden;
+}
+
+.caja {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: var(--azul-tenue);
+}
+
+.imagenEnv {
+  position: absolute;
+  inset: 0;
+}
+
+.img {
+  object-fit: cover;
+}
+
+.cortina {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--azul), var(--rojo-oscuro));
+  transform-origin: right;
+}
+
+.imgCruzada {
+  object-fit: contain;
+  padding: 1.4rem;
+  transition: opacity 0.5s ease;
+}

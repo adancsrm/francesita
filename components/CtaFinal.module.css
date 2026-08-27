@@ -1,0 +1,36 @@
+.cta {
+  background: linear-gradient(150deg, var(--azul) 0%, var(--azul-noche) 100%);
+  border-radius: var(--radio);
+  color: var(--blanco);
+  padding: clamp(2.2rem, 5vw, 3.6rem);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.8rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--sombra-alta);
+}
+.cta::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: 320px;
+  background:
+    radial-gradient(140% 140% at 100% 0%, rgba(255, 255, 255, 0.16), transparent 60%),
+    radial-gradient(80% 100% at 100% 100%, rgba(236, 31, 38, 0.22), transparent 65%);
+}
+.cta :global(h2) {
+  color: var(--blanco);
+  margin-bottom: 0.3em;
+}
+.cta p {
+  color: #d3d8ec;
+  margin: 0;
+  max-width: 48ch;
+}
+.cta > div {
+  position: relative;
+  z-index: 1;
+}

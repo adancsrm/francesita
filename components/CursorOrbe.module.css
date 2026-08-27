@@ -1,0 +1,30 @@
+.orbe {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 340px;
+  height: 340px;
+  margin: -170px 0 0 -170px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(44, 59, 126, 0.1),
+    rgba(236, 31, 38, 0.06) 45%,
+    transparent 72%
+  );
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: multiply;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  will-change: transform;
+}
+.activo {
+  opacity: 1;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .orbe {
+    display: none;
+  }
+}

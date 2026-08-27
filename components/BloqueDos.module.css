@@ -1,0 +1,24 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+
+.media {
+  order: 0;
+  margin: 0;
+}
+.invertido .media {
+  order: 1;
+}
+
+@media (max-width: 680px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .media,
+  .invertido .media {
+    order: 0;
+  }
+}

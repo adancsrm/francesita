@@ -1,0 +1,113 @@
+.encabezado {
+  max-width: 62ch;
+  margin-bottom: 2.6rem;
+}
+
+.carrusel {
+  position: relative;
+}
+
+.viewport {
+  overflow: hidden;
+  cursor: grab;
+}
+.viewport:active {
+  cursor: grabbing;
+}
+
+.pista {
+  display: flex;
+  gap: 1.6rem;
+  width: max-content;
+  padding-bottom: 0.4rem;
+}
+
+.tarjeta {
+  width: min(420px, 82vw);
+  flex-shrink: 0;
+  background: var(--blanco);
+  border: 1px solid var(--linea);
+  border-left: 5px solid var(--rojo);
+  border-radius: var(--radio);
+  padding: 1.8rem;
+  margin: 0;
+}
+.tarjeta blockquote {
+  margin: 0 0 1.2rem;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: var(--t-md);
+  color: var(--tinta);
+}
+.tarjeta blockquote::before {
+  content: "\201C";
+  display: block;
+  font-family: var(--serif);
+  font-style: normal;
+  font-size: 3rem;
+  line-height: 0.5;
+  color: var(--rojo);
+  margin-bottom: 0.9rem;
+  opacity: 0.85;
+}
+.tarjeta figcaption {
+  font-family: var(--display);
+  font-weight: 700;
+  color: var(--azul);
+  font-size: var(--t-sm);
+}
+.tarjeta figcaption span {
+  display: block;
+  font-weight: 500;
+  color: var(--tinta-suave);
+}
+
+.controles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 1.8rem;
+}
+
+.flecha {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--linea);
+  background: var(--blanco);
+  color: var(--azul);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition:
+    background var(--transicion),
+    color var(--transicion),
+    transform var(--transicion);
+}
+.flecha:hover {
+  background: var(--azul);
+  color: var(--blanco);
+  transform: scale(1.06);
+}
+
+.puntos {
+  display: flex;
+  gap: 0.5rem;
+}
+.punto {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: none;
+  background: var(--linea);
+  cursor: pointer;
+  padding: 0;
+  transition:
+    background var(--transicion),
+    transform var(--transicion);
+}
+.puntoActivo {
+  background: var(--rojo);
+  transform: scale(1.3);
+}
