@@ -12,7 +12,7 @@ export default function Nosotros() {
           <span className="eyebrow">Quiénes somos</span>
           <h2>Una fábrica mexicana dedicada solo a calcetas y calcetines</h2>
           <p>
-            Francesita nació como un taller familiar de tejido de punto y hoy
+            Francés nació como un taller familiar de tejido de punto y hoy
             surte a escuelas y uniformerías de varios estados del país.
             Hacemos una sola cosa y la hacemos completa: del hilo a la caja,
             sin intermediarios.
@@ -28,7 +28,7 @@ export default function Nosotros() {
             <li>Revisión par por par antes de empacar.</li>
           </ul>
           <Link className="btn btnLinea" href="/nosotros">
-            Ver más sobre Francesita
+            Ver más sobre Francés
           </Link>
         </Reveal>
 

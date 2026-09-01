@@ -4,16 +4,16 @@ import PanelDatos from "@/components/PanelDatos";
 import Reveal from "@/components/Reveal";
 
 export const metadata = {
-  title: "Contacto | Francesita, calcetas y calcetines escolares",
+  title: "Contacto | Francés, calcetas y calcetines escolares",
   description:
-    "Escríbenos para pedidos, resurtidos o dudas sobre calcetas y calcetines Francesita. Teléfono, correo y horario de atención en la Ciudad de México.",
+    "Escríbenos para pedidos, resurtidos o dudas sobre calcetas y calcetines Francés. Teléfono, correo y horario de atención en la Ciudad de México.",
   alternates: { canonical: "/contacto" },
 };
 
 export default function Contacto() {
   return (
     <>
-      <CabeceraPagina miga="Contacto" eyebrow="Contacto" titulo="Habla con el equipo de Francesita">
+      <CabeceraPagina miga="Contacto" eyebrow="Contacto" titulo="Habla con el equipo de Francés">
         Dudas sobre modelos, tallas, resurtidos o el estado de un pedido: escríbenos y te contestamos el
         mismo día hábil.
       </CabeceraPagina>
@@ -30,7 +30,7 @@ export default function Contacto() {
             </li>
             <li>
               <strong>Teléfono</strong>
-              <a href="tel:+525500000000">55 0000 0000</a>
+              <a href="tel:+522228836412">222 883 6412</a>
             </li>
             <li>
               <strong>WhatsApp</strong>
@@ -40,11 +40,7 @@ export default function Contacto() {
             </li>
             <li>
               <strong>Ventas</strong>
-              <a href="mailto:ventas@francesitas.com.mx">ventas@francesitas.com.mx</a>
-            </li>
-            <li>
-              <strong>Contacto general</strong>
-              <a href="mailto:contacto@francesitas.com.mx">contacto@francesitas.com.mx</a>
+              <a href="mailto:ventas@calcetasfrances.com">ventas@calcetasfrances.com</a>
             </li>
             <li>
               <strong>Horario</strong>Lunes a viernes 9:00 – 18:00
@@ -70,7 +66,7 @@ export default function Contacto() {
               style={{ border: 0 }}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Ubicación de Francesita en San Rafael Ixtapalucan, Puebla"
+              title="Ubicación de Francés en San Rafael Ixtapalucan, Puebla"
             />
           </Reveal>
           <p style={{ marginTop: "1.2rem" }}>

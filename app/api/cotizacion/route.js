@@ -4,7 +4,7 @@ import { limpiarTexto, limpiarLista, validarCorreo, esHoneypot, escaparHtml } fr
 import { limiteExcedido, obtenerIp } from "@/lib/limiteFrecuencia";
 import { enviarCorreo } from "@/lib/correo";
 
-const CORREO_VENTAS = process.env.CORREO_VENTAS || "ventas@francesitas.com.mx";
+const CORREO_VENTAS = process.env.CORREO_VENTAS || "ventas@calcetasfrances.com";
 const SEGUNDOS_ENTRE_ENVIOS = 30;
 const ARCHIVO_BITACORA = path.join(process.cwd(), "data", "solicitudes.log");
 
@@ -61,7 +61,7 @@ export async function POST(request) {
   if (nombre === "") errores.push("nombre");
   if (correo === false) errores.push("correo");
   if (producto === "") errores.push("producto");
-  if (cantidad < 50) errores.push("cantidad");
+  if (cantidad < 1) errores.push("cantidad");
 
   if (errores.length > 0) {
     return responder(false, `Revisa estos campos: ${errores.join(", ")}.`, 422);
@@ -91,8 +91,8 @@ export async function POST(request) {
     `<h2 style="color:#2C3B7E">¡Gracias, ${escaparHtml(nombre)}!</h2>` +
     `<p>Recibimos tu solicitud de cotización para <strong>${escaparHtml(producto)}</strong> (${cantidad} pares). ` +
     "Te respondemos en menos de 24 horas hábiles con precio por par, tiempo de producción y costo de envío.</p>" +
-    '<p style="color:#666;font-size:13px">— Equipo Francesita</p></div>';
-  await enviarCorreo(correo, "Recibimos tu cotización — Francesita", cuerpoAcuse, CORREO_VENTAS, "Francesita");
+    '<p style="color:#666;font-size:13px">— Equipo Francés</p></div>';
+  await enviarCorreo(correo, "Recibimos tu cotización — Francés", cuerpoAcuse, CORREO_VENTAS, "Francés");
 
   await registrarBitacora("cotizacion", { ...filas, envio_ok: resultadoVentas.ok, envio_metodo: resultadoVentas.metodo });
 

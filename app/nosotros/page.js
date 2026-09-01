@@ -8,9 +8,9 @@ import CtaFinal from "@/components/CtaFinal";
 import styles from "./page.module.css";
 
 export const metadata = {
-  title: "Quiénes somos: misión, visión e historia | Francesita",
+  title: "Quiénes somos: misión, visión e historia | Francés",
   description:
-    "Conoce la misión, visión e historia de Francesita: taller mexicano de tejido de punto especializado en calcetas escolares y calcetines de algodón con lycra.",
+    "Conoce la misión, visión e historia de Francés: taller mexicano de tejido de punto especializado en calcetas escolares y calcetines de algodón con lycra.",
   alternates: { canonical: "/nosotros" },
 };
 
@@ -61,8 +61,8 @@ export default function Nosotros() {
         invertido
         media={
           <MediaImagen
-            src="/img/EscolarFrancesitaNinas.jpeg"
-            alt="Taller de Francesita donde se tejen las calcetas escolares"
+            src="/img/quienesSomosLuz.jpg"
+            alt="Taller de tejido de Francés, hileras de máquinas circulares tejiendo calcetas"
             aspecto="1127 / 1111"
           />
         }
@@ -70,7 +70,7 @@ export default function Nosotros() {
         <span className="eyebrow">Nuestra historia</span>
         <h2>De un taller familiar a proveedor de escuelas</h2>
         <p>
-          Francesita empezó con dos telares y un pedido pequeño para la escuela del barrio. Las mamás
+          Francés empezó con dos telares y un pedido pequeño para la escuela del barrio. Las mamás
           regresaban por más porque las calcetas duraban el ciclo completo, y esa recomendación de boca
           en boca fue el primer catálogo que tuvimos.
         </p>
@@ -90,8 +90,8 @@ export default function Nosotros() {
       <BloqueDos
         media={
           <MediaImagen
-            src="/img/EscolarFrancesitaNinas-blanco1.jpeg"
-            alt="Tejido de algodón peinado con lycra de las calcetas Francesita"
+            src="/img/Nosotros.jpg"
+            alt="Variedad de calcetines Francés en negro, azul marino, gris y blanco, tejidos con algodón peinado y lycra"
             aspecto="1127 / 1111"
           />
         }

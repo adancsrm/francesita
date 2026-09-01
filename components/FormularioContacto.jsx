@@ -45,7 +45,7 @@ export default function FormularioContacto() {
     } catch {
       setAviso({
         tipo: "fallo",
-        texto: "No pudimos conectar con el servidor. Escríbenos a contacto@francesitas.com.mx.",
+        texto: "No pudimos conectar con el servidor. Escríbenos a ventas@calcetasfrances.com.",
       });
     } finally {
       setEnviando(false);

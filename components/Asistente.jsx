@@ -45,7 +45,7 @@ const GUION = [
     chip: "Contacto",
     claves: ["contacto", "telefono", "teléfono", "correo", "whatsapp", "direccion", "dirección", "horario", "hablar"],
     respuesta:
-      'Estamos de lunes a viernes de 9:00 a 18:00 y sábados de 9:00 a 14:00. Escríbenos por <a href="/contacto">el formulario de contacto</a>, por WhatsApp al <a href="https://wa.me/522228836412" target="_blank" rel="noopener">222 883 6412</a> o al correo ventas@francesitas.com.mx.',
+      'Estamos de lunes a viernes de 9:00 a 18:00 y sábados de 9:00 a 14:00. Escríbenos por <a href="/contacto">el formulario de contacto</a>, por WhatsApp al <a href="https://wa.me/522228836412" target="_blank" rel="noopener">222 883 6412</a> o al correo ventas@calcetasfrances.com.',
   },
   {
     chip: "Materiales",
@@ -59,7 +59,7 @@ const RESPUESTA_GENERICA =
   'No estoy seguro de haber entendido. Puedo ayudarte con productos, tallas, cotizaciones, personalización y envíos. Si prefieres hablar con una persona, escríbenos en <a href="/contacto">Contacto</a>.';
 
 const SALUDO =
-  "¡Hola! Soy el asistente de Francesita. Te ayudo con calcetas, calcetines, tallas y cotizaciones. ¿Qué necesitas?";
+  "¡Hola! Soy el asistente de Francés. Te ayudo con calcetas, calcetines, tallas y cotizaciones. ¿Qué necesitas?";
 
 var MARCAS_DIACRITICAS = new RegExp("[\\u0300-\\u036f]", "g");
 
@@ -146,12 +146,12 @@ export default function Asistente() {
 
       <section
         className={`${styles.panel} ${abierto ? styles.abierto : ""}`}
-        aria-label="Asistente en línea de Francesita"
+        aria-label="Asistente en línea de Francés"
       >
         <header className={styles.cabecera}>
-          <Image src="/img/logo-francesitas.svg" alt="" width={38} height={38} />
+          <Image src="/img/LogoFrances.jpeg" alt="" width={62} height={34} />
           <div>
-            <strong>Asistente Francesita</strong>
+            <strong>Asistente Francés</strong>
             <small>En línea ahora</small>
           </div>
           <button type="button" className={styles.cerrarBtn} aria-label="Cerrar asistente" onClick={cerrar}>
