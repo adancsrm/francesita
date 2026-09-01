@@ -11,27 +11,27 @@ export const viewport = {
 };
 
 export const metadata = {
-  metadataBase: new URL("https://www.francesitas.com.mx"),
-  title: "Calcetas y calcetines escolares Francesita | Fabricante en México",
+  metadataBase: new URL("https://www.calcetasfrances.com"),
+  title: "Calcetas y calcetines escolares Francés | Fabricante en México",
   description:
-    "Francesita fabrica calcetas escolares y calcetines de algodón con lycra para escuelas, uniformerías y distribuidores en México. Cotiza tu pedido por mayoreo.",
+    "Francés fabrica calcetas escolares y calcetines de algodón con lycra para escuelas, uniformerías y distribuidores en México. Cotiza tu pedido por mayoreo.",
   icons: {
-    icon: [{ url: "/img/favicon.svg", type: "image/svg+xml" }],
+    icon: [{ url: "/img/LogoFrances.jpeg", type: "image/jpeg" }],
   },
   openGraph: {
-    title: "Calcetas y calcetines escolares Francesita | Fabricante en México",
+    title: "Calcetas y calcetines escolares Francés | Fabricante en México",
     description:
-      "Francesita fabrica calcetas escolares y calcetines de algodón con lycra para escuelas, uniformerías y distribuidores en México. Cotiza tu pedido por mayoreo.",
+      "Francés fabrica calcetas escolares y calcetines de algodón con lycra para escuelas, uniformerías y distribuidores en México. Cotiza tu pedido por mayoreo.",
     type: "website",
     locale: "es_MX",
-    siteName: "Francesita",
+    siteName: "Francés",
   },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="es-MX" data-scroll-behavior="smooth">
-      <body>
+      <body suppressHydrationWarning>
         <a className="saltaContenido" href="#contenido">
           Saltar al contenido
         </a>

@@ -13,8 +13,7 @@ export default function Hero() {
             Fabricantes desde 1998
           </Reveal>
           <Reveal as="h1" y={22} delay={0.05}>
-            Calcetas escolares Francesita{" "}
-            <em className={styles.enfasis}>que aguantan todo el ciclo</em>
+            <em className={styles.enfasis}>Calcetas Francés</em>
           </Reveal>
           <Reveal as="p" className={styles.texto} y={18} delay={0.12}>
             Tejemos calcetas y calcetines de algodón peinado con lycra para
@@ -58,11 +57,6 @@ export default function Hero() {
 
         <Reveal as="figure" className={styles.figura} x={30} y={0} delay={0.1}>
           <Hero3D />
-          <figcaption className={styles.sello}>
-            <i aria-hidden="true" /> Algodón peinado
-            <br />
-            con lycra
-          </figcaption>
         </Reveal>
       </div>
     </section>

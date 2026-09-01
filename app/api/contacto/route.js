@@ -4,7 +4,7 @@ import { limpiarTexto, validarCorreo, esHoneypot, escaparHtml } from "@/lib/vali
 import { limiteExcedido, obtenerIp } from "@/lib/limiteFrecuencia";
 import { enviarCorreo } from "@/lib/correo";
 
-const CORREO_CONTACTO = process.env.CORREO_CONTACTO || "contacto@francesitas.com.mx";
+const CORREO_CONTACTO = process.env.CORREO_CONTACTO || "ventas@calcetasfrances.com";
 const SEGUNDOS_ENTRE_ENVIOS = 30;
 const ARCHIVO_BITACORA = path.join(process.cwd(), "data", "solicitudes.log");
 
@@ -83,8 +83,8 @@ export async function POST(request) {
     '<div style="font-family:Arial,sans-serif;max-width:640px">' +
     `<h2 style="color:#2C3B7E">¡Gracias, ${escaparHtml(nombre)}!</h2>` +
     `<p>Recibimos tu mensaje sobre <strong>${escaparHtml(asunto)}</strong>. Te contestamos el mismo día hábil.</p>` +
-    '<p style="color:#666;font-size:13px">— Equipo Francesita</p></div>';
-  await enviarCorreo(correo, "Recibimos tu mensaje — Francesita", cuerpoAcuse, CORREO_CONTACTO, "Francesita");
+    '<p style="color:#666;font-size:13px">— Equipo Francés</p></div>';
+  await enviarCorreo(correo, "Recibimos tu mensaje — Francés", cuerpoAcuse, CORREO_CONTACTO, "Francés");
 
   await registrarBitacora("contacto", { ...filas, envio_ok: resultadoContacto.ok, envio_metodo: resultadoContacto.metodo });
 

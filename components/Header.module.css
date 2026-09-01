@@ -27,8 +27,7 @@
 .barraNav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+  gap: 2.5rem;
   min-height: 76px;
 }
 
@@ -87,6 +86,7 @@
   display: flex;
   align-items: center;
   gap: 0.8rem;
+  margin-left: auto;
 }
 
 .botonMenu {
@@ -163,7 +163,6 @@
   }
   .menu li:last-child {
     border-bottom: none;
-    padding-top: 1rem;
   }
   .menu a {
     display: block;
@@ -171,9 +170,5 @@
   }
   .menu a::after {
     display: none;
-  }
-  .menu li:last-child a {
-    display: inline-flex;
-    width: 100%;
   }
 }

@@ -41,15 +41,14 @@ export default function Header() {
   return (
     <header className={`${styles.header} ${fijo ? styles.fijo : ""}`}>
       <div className={`contenedor ${styles.barraNav}`}>
-        <Link className={styles.logo} href="/" aria-label="Francesita, inicio">
+        <Link className={styles.logo} href="/" aria-label="Francés, inicio">
           <Image
-            src="/img/logo-francesitas.svg"
-            alt="Logotipo de Francesita"
-            width={46}
-            height={46}
+            src="/img/LogoFrances.jpeg"
+            alt="Logotipo de Francés"
+            width={180} //88
+            height={98} //44
             priority
           />
-          <span>Francesita</span>
         </Link>
 
         <nav aria-label="Navegación principal">
@@ -61,11 +60,6 @@ export default function Header() {
                 </Link>
               </li>
             ))}
-            <li>
-              <Link className="btn btnAcento" href="/cotizacion">
-                Cotiza ahora
-              </Link>
-            </li>
           </ul>
         </nav>
 

@@ -49,7 +49,7 @@ export default function FormularioCotizacion() {
     } catch {
       setAviso({
         tipo: "fallo",
-        texto: "No pudimos conectar con el servidor. Escríbenos a ventas@francesitas.com.mx.",
+        texto: "No pudimos conectar con el servidor. Escríbenos a ventas@calcetasfrances.com.",
       });
     } finally {
       setEnviando(false);
@@ -108,8 +108,7 @@ export default function FormularioCotizacion() {
           <label htmlFor="cantidad">
             Cantidad de pares <span className="req">*</span>
           </label>
-          <input type="number" id="cantidad" name="cantidad" required min={50} step={1} placeholder="50" />
-          <span className="ayuda">Pedido mínimo: 50 pares por modelo y color.</span>
+          <input type="number" id="cantidad" name="cantidad" required min={1} step={1} placeholder="10" />
           <span className="errorCampo">{errores.cantidad}</span>
         </div>
 

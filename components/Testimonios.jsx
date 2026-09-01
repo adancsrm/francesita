@@ -97,7 +97,7 @@ export default function Testimonios() {
       <div className="contenedor">
         <Reveal className={styles.encabezado}>
           <span className="eyebrow">Lo que dicen nuestros clientes</span>
-          <h2>Escuelas y uniformerías que ya surten con Francesita</h2>
+          <h2>Escuelas y uniformerías que ya surten con Francés</h2>
         </Reveal>
 
         <div className={styles.carrusel}>

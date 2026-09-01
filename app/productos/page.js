@@ -1,16 +1,183 @@
 import CabeceraPagina from "@/components/CabeceraPagina";
-import BloqueDos from "@/components/BloqueDos";
-import { MediaImagen, MediaCruzada } from "@/components/Media";
 import Reveal from "@/components/Reveal";
 import GaleriaKathy from "@/components/GaleriaKathy";
+import BannerGaleriaProducto from "@/components/BannerGaleriaProducto";
 import Faq from "@/components/Faq";
 import CtaFinal from "@/components/CtaFinal";
-import styles from "./page.module.css";
+
+const FOTOS_CALCETA_LARGA_CABALLERO = [
+  {
+    src: "/img/CalcetaCaballeroL/CB1.jpg",
+    alt: "Calceta larga Jammy Sport para caballero en gris y negro, marca JM bordada",
+  },
+  {
+    src: "/img/CalcetaCaballeroL/CB2.png",
+    alt: "Calceta larga Jammy Sport para caballero en negro, detalle de puño y bordado JM",
+  },
+  {
+    src: "/img/CalcetaCaballeroL/CB3.jpg",
+    alt: "Calceta larga Jammy Sport para caballero en gris jaspeado, detalle de puño y bordado JM",
+  },
+  {
+    src: "/img/CalcetaCaballeroL/CB4.jpg",
+    alt: "Calceta larga Jammy Sport para caballero en gris carbón, detalle de puño y bordado JM",
+  },
+  {
+    src: "/img/CalcetaCaballeroL/CB5.jpg",
+    alt: "Tres pares de calceta larga Jammy Sport para caballero en gris carbón, gris jaspeado y negro",
+  },
+];
+
+const FOTOS_CALCETA_CORTA_CABALLERO = [
+  {
+    src: "/img/CalcetasJammyCaballero/1_CalcetasCortasCaballero.jpg",
+    alt: "Tres pares de calceta corta Jammy Sport para caballero en azul marino, blanco y negro",
+  },
+  {
+    src: "/img/CalcetasJammyCaballero/2_calcetasCortasCaballero.jpg",
+    alt: "Dos pares de calceta corta Jammy Sport para caballero en negro y gris",
+  },
+  {
+    src: "/img/CalcetasJammyCaballero/3_CalcetaGrisCortaCaballero.jpg",
+    alt: "Calceta corta Jammy Sport para caballero en gris",
+  },
+  {
+    src: "/img/CalcetasJammyCaballero/4_calcetaCortaNegraCaballero.jpg",
+    alt: "Calceta corta Jammy Sport para caballero en negro",
+  },
+  {
+    src: "/img/CalcetasJammyCaballero/5_calcetaCortaBlancaCaballero.jpg",
+    alt: "Calceta corta Jammy Sport para caballero en blanco",
+  },
+];
+
+const FOTOS_CALCETIN_NINO = [
+  {
+    src: "/img/calcetinNino/1_calcetaNino.jpg",
+    alt: "Seis pares de calcetín para niño Paquitos Jr. en negro, azul marino, gris y blanco",
+  },
+  {
+    src: "/img/calcetinNino/2_calcetaNino.jpg",
+    alt: "Tres pares de calcetín para niño Paquitos Jr. en negro, azul marino y blanco",
+  },
+  {
+    src: "/img/calcetinNino/3_calcetaNino.jpg",
+    alt: "Calcetín para niño Paquitos Jr. en azul marino",
+  },
+  {
+    src: "/img/calcetinNino/4_calcetaNino.jpg",
+    alt: "Calcetín para niño Paquitos Jr. en negro",
+  },
+  {
+    src: "/img/calcetinNino/5_calcetaNino.jpg",
+    alt: "Calcetín para niño Paquitos Jr. en blanco",
+  },
+  {
+    src: "/img/calcetinNino/6_calcetaNino.jpg",
+    alt: "Tres pares de calcetín para niño Paquitos Jr. con estampados, en azul marino, gris y negro",
+  },
+  {
+    src: "/img/calcetinNino/7_calcetaNino.jpg",
+    alt: "Detalle de tres pares de calcetín para niño Paquitos Jr. con estampados bordados",
+  },
+];
+
+const FOTOS_TIN_DAMA = [
+  { src: "/img/tinDama/1_tinDama.jpg", alt: "Calceta Tin para dama, par 1" },
+  { src: "/img/tinDama/2_tinDama.jpg", alt: "Calceta Tin para dama, par 2" },
+  { src: "/img/tinDama/3_tinDama.jpg", alt: "Calceta Tin para dama, par 3" },
+  { src: "/img/tinDama/4_tinDama.jpg", alt: "Calceta Tin para dama, par 4" },
+  { src: "/img/tinDama/5_tinDama.jpg", alt: "Calceta Tin para dama, par 5" },
+  { src: "/img/tinDama/6_tinDama.jpg", alt: "Calceta Tin para dama, par 6" },
+  { src: "/img/tinDama/7_tinDama.jpg", alt: "Calceta Tin para dama, par 7" },
+  { src: "/img/tinDama/8_tinDama.jpg", alt: "Calceta Tin para dama, par 8" },
+  { src: "/img/tinDama/9_tinDama.jpg", alt: "Calceta Tin para dama, par 9" },
+  { src: "/img/tinDama/10_tinDama.jpg", alt: "Calceta Tin para dama, par 10" },
+];
+
+const FOTOS_ESCOLAR_NINA = [
+  { src: "/img/Escolar/1_escolar.jpg", alt: "Calceta escolar Francés para niña, par 1" },
+  { src: "/img/Escolar/2_escolar.jpg", alt: "Calceta escolar Francés para niña, par 2" },
+  { src: "/img/Escolar/3_escolar.jpg", alt: "Calceta escolar Francés para niña, par 3" },
+  { src: "/img/Escolar/4_escolar.jpg", alt: "Calceta escolar Francés para niña, par 4" },
+  { src: "/img/Escolar/5_escolar.jpg", alt: "Calceta escolar Francés para niña, par 5" },
+  { src: "/img/Escolar/6_escolar.jpg", alt: "Calceta escolar Francés para niña, par 6" },
+  { src: "/img/Escolar/7_escolar.jpg", alt: "Calceta escolar Francés para niña, par 7" },
+  { src: "/img/Escolar/8_escolar.jpg", alt: "Calceta escolar Francés para niña, par 8" },
+  { src: "/img/Escolar/9_escolar.jpg", alt: "Calceta escolar Francés para niña, par 9" },
+  { src: "/img/Escolar/10_escolar.jpg", alt: "Calceta escolar Francés para niña, par 10" },
+];
+
+const FOTOS_DIABETICO_DAMA = [
+  {
+    src: "/img/diabeticoDama/1_diabeticoDama.jpg",
+    alt: "Calcetín Francés línea diabético para dama, par 1",
+  },
+  {
+    src: "/img/diabeticoDama/2_diabeticoDama.jpg",
+    alt: "Calcetín Francés línea diabético para dama, par 2",
+  },
+  {
+    src: "/img/diabeticoDama/3_diabeticoDama.jpg",
+    alt: "Calcetín Francés línea diabético para dama, par 3",
+  },
+  {
+    src: "/img/diabeticoDama/4_diabeticoDama.jpg",
+    alt: "Calcetín Francés línea diabético para dama, par 4",
+  },
+  {
+    src: "/img/diabeticoDama/5_diabeticoDama.jpg",
+    alt: "Calcetín Francés línea diabético para dama, par 5",
+  },
+  {
+    src: "/img/diabeticoDama/6_diabeticoDama.jpg",
+    alt: "Calcetín Francés línea diabético para dama, par 6",
+  },
+  {
+    src: "/img/diabeticoDama/7_diabeticoDama.jpg",
+    alt: "Calcetín Francés línea diabético para dama, par 7",
+  },
+];
+
+const FOTOS_DIABETICO_CABALLERO = [
+  {
+    src: "/img/diabeticoCaballero/1_diabeticoCaballero.jpg",
+    alt: "Calcetín Francés línea diabético para caballero, par 1",
+  },
+  {
+    src: "/img/diabeticoCaballero/2_diabeticoCaballero.jpg",
+    alt: "Calcetín Francés línea diabético para caballero, par 2",
+  },
+  {
+    src: "/img/diabeticoCaballero/3_diabeticoCaballero.jpg",
+    alt: "Calcetín Francés línea diabético para caballero, par 3",
+  },
+  {
+    src: "/img/diabeticoCaballero/4_diabeticoCaballero.jpg",
+    alt: "Calcetín Francés línea diabético para caballero, par 4",
+  },
+  {
+    src: "/img/diabeticoCaballero/5_diabeticoCaballero.jpg",
+    alt: "Calcetín Francés línea diabético para caballero, par 5",
+  },
+  {
+    src: "/img/diabeticoCaballero/6_diabeticoCaballero.jpg",
+    alt: "Calcetín Francés línea diabético para caballero, par 6",
+  },
+  {
+    src: "/img/diabeticoCaballero/7_diabeticoCaballero.jpg",
+    alt: "Calcetín Francés línea diabético para caballero, par 7",
+  },
+  {
+    src: "/img/diabeticoCaballero/8_diabeticoCaballero.jpg",
+    alt: "Calcetín Francés línea diabético para caballero, par 8",
+  },
+];
 
 export const metadata = {
-  title: "Calcetas para caballero, dama, niños, escolar y diabético | Productos Francesita",
+  title: "Calcetas para caballero, dama, niños, escolar y diabético | Productos Francés",
   description:
-    "Catálogo Francesita: calcetas para caballero, dama, niños, escolares y línea diabético. Algodón peinado con lycra, por mayoreo para uniformerías y distribuidores.",
+    "Catálogo Francés: calcetas para caballero, dama, niños, escolares y línea diabético. Algodón peinado con lycra, por mayoreo para uniformerías y distribuidores.",
   alternates: { canonical: "/productos" },
 };
 
@@ -48,153 +215,116 @@ export default function Productos() {
       <CabeceraPagina
         miga="Productos"
         eyebrow="Catálogo"
-        titulo="Calcetas y calcetines Francesita para toda la familia"
+        titulo="Calcetas y calcetines Francés para toda la familia"
       >
         Cinco líneas de producción en algodón peinado con lycra: caballero, dama, niños, escolar y
         diabético. Todas disponibles por mayoreo en color institucional o de línea.
       </CabeceraPagina>
 
-      <BloqueDos
-        id="caballero"
-        media={
-          <MediaCruzada
-            imagenes={[
-              { src: "/img/TinFrancesCaballero.jpeg", alt: "Calcetas deportivas Francés para caballero, tobilleras" },
-              {
-                src: "/img/calcetaDeportivaCaballero.jpeg",
-                alt: "Calcetas Franco Sport para caballero, tobilleras en azul marino",
-              },
-            ]}
+      <section className="seccion" id="caballero">
+        <div className="contenedor">
+          <BannerGaleriaProducto
+            arriba
+            eyebrow="Línea caballero"
+            titulo="Calceta larga caballero"
+            descripcion="Corte largo con puño reforzado, en gris jaspeado, gris carbón y negro, marca JM bordada."
+            materiales="65% Algodón, 25% Poliéster y 10% Spandex"
+            fotos={FOTOS_CALCETA_LARGA_CABALLERO}
           />
-        }
-      >
-        <span className="etiqueta">Línea caballero</span>
-        <h2>Calcetas para caballero</h2>
-        <p>
-          Calcetas deportivas tobilleras para uso diario y actividad física, con puño suave que no
-          aprieta y refuerzo en talón y punta para que aguanten el paso del día completo.
-        </p>
-        <ul className="listaCheck">
-          <li>Algodón peinado con lycra para que no se venzan.</li>
-          <li>Corte tobillero, ideal para tenis y zapato de trabajo.</li>
-          <li>Colores de línea: negro, gris Oxford y azul marino.</li>
-        </ul>
-      </BloqueDos>
+        </div>
+      </section>
 
-      <BloqueDos
-        id="dama"
-        tenue
-        invertido
-        media={
-          <MediaImagen
-            src="/img/TinFrancesDama.jpeg"
-            alt="Calcetas deportivas Francés para dama en azul marino, blanco y negro"
-            aspecto="16 / 9"
+      <section className="seccion" id="calceta-corta-caballero">
+        <div className="contenedor">
+          <BannerGaleriaProducto
+            arriba
+            eyebrow="Línea caballero"
+            titulo="Calceta corta caballero"
+            descripcion="Corte tobillero con puño suave, en azul marino, gris, negro y blanco, marca JM bordada."
+            materiales="70% Spun, 20% Licra y 10% Elástico"
+            fotos={FOTOS_CALCETA_CORTA_CABALLERO}
           />
-        }
-        extra={
-          <div className={`contenedor ${styles.extra}`} id="kathy-dama">
-            <Reveal className={styles.encabezado}>
-              <span className="eyebrow">Línea Kathy</span>
-              <h2>Calcetas Kathy para dama, estampadas</h2>
-              <p>
-                Modelo tobillero de moda con puño bordado KATHY, en estampados y colores pastel para
-                venta por mayoreo a boutiques y distribuidores.
-              </p>
-            </Reveal>
-            <GaleriaKathy />
-          </div>
-        }
-      >
-        <span className="etiqueta">Línea dama</span>
-        <h2>Calcetas para dama</h2>
-        <p>
-          Calcetas tobilleras ligeras y cómodas para el uso diario, en los colores que más se piden
-          para uniforme y para calle: azul marino, blanco y negro.
-        </p>
-        <ul className="listaCheck">
-          <li>Algodón peinado con lycra, corte tobillero.</li>
-          <li>Disponibles en azul marino, blanco y negro.</li>
-          <li>Mismo hilo y calidad que el resto de la línea Francesita.</li>
-        </ul>
-      </BloqueDos>
+        </div>
+      </section>
 
-      <BloqueDos
-        id="ninos"
-        media={
-          <MediaCruzada
-            imagenes={[
-              { src: "/img/TinFrancesNinos.jpeg", alt: "Calcetas escolares Paquitos Jr. Francés para niños, azul marino" },
-              { src: "/img/TinDeportivoNinos.jpeg", alt: "Calcetas deportivas Francés para niños en blanco y azul" },
-            ]}
+      <section className="seccion" id="calcetin-nino">
+        <div className="contenedor">
+          <BannerGaleriaProducto
+            eyebrow="Línea niños"
+            titulo="Calcetín niño"
+            descripcion="Calcetín tobillero Paquitos Jr. en azul marino, gris, negro y blanco, con y sin estampados."
+            fotos={FOTOS_CALCETIN_NINO}
           />
-        }
-      >
-        <span className="etiqueta">Línea niños</span>
-        <h2>Calcetas para niños</h2>
-        <p>
-          Dos modelos para el día a día: calceta escolar Paquitos Jr. en azul marino y calceta
-          deportiva tobillera, ambas en algodón peinado para que resistan el recreo completo.
-        </p>
-        <ul className="listaCheck">
-          <li>Calceta escolar Paquitos Jr., corte alto, azul marino.</li>
-          <li>Calceta deportiva tobillera en blanco y azul.</li>
-          <li>Tallas infantiles, disponibles por mayoreo.</li>
-        </ul>
-      </BloqueDos>
+        </div>
+      </section>
 
-      <BloqueDos
-        id="escolar"
-        tenue
-        invertido
-        media={
-          <MediaImagen
-            src="/img/EscolarFrancesitaNinas-blanco.jpeg"
-            alt="Calceta escolar Francesita lisa con lycra para niñas, corte alto blanco"
-            aspecto="4 / 5"
+      <section className="seccion" id="tin-dama">
+        <div className="contenedor">
+          <BannerGaleriaProducto
+            claro
+            eyebrow="Línea dama"
+            titulo="Tin Dama"
+            descripcion="Calcetas Tin para dama, disponibles por mayoreo en color institucional o de línea."
+            materiales="97% Algodón y 3% Elastano"
+            fotos={FOTOS_TIN_DAMA}
           />
-        }
-      >
-        <span className="etiqueta">Línea principal</span>
-        <h2>Calceta escolar</h2>
-        <p>
-          La calceta escolar lisa de toda la vida: corte alto hasta la rodilla, en blanco, con lycra
-          en el puño para que no se venza a media jornada.
-        </p>
-        <ul className="listaCheck">
-          <li>Acabado liso, con lycra en el puño.</li>
-          <li>Corte alto hasta la rodilla, color blanco.</li>
-          <li>Escudo bordado o tejido a partir de 200 pares.</li>
-        </ul>
-      </BloqueDos>
+        </div>
+      </section>
 
-      <BloqueDos
-        id="diabetico"
-        media={
-          <MediaCruzada
-            imagenes={[
-              { src: "/img/diabetico.jpeg", alt: "Calcetines Francés línea diabético para caballero, negro y gris" },
-              {
-                src: "/img/diabetico2.jpeg",
-                alt: "Calcetines Francés línea diabético, tres pares en azul marino, negro y gris",
-              },
-            ]}
+      <section className="seccion seccion--tenue" id="kathy-dama">
+        <div className="contenedor">
+          <Reveal className="encabezadoSeccion">
+            <span className="eyebrow">Línea Kathy</span>
+            <h2>Calcetas Kathy para dama</h2>
+            <p>
+              Modelo tobillero de moda con puño bordado KATHY, en estampados y colores pastel para
+              venta por mayoreo a boutiques y distribuidores.
+            </p>
+            <p>Materiales: 70% Spun, 25% Licra y 5% Elástico.</p>
+          </Reveal>
+          <GaleriaKathy />
+        </div>
+      </section>
+
+      <section className="seccion" id="escolar-nina">
+        <div className="contenedor">
+          <BannerGaleriaProducto
+            claro
+            eyebrow="Línea niñas"
+            titulo="Calceta escolar niña"
+            descripcion="Calceta escolar Francés para niña, disponible por mayoreo en color institucional o de línea."
+            fotos={FOTOS_ESCOLAR_NINA}
           />
-        }
-      >
-        <span className="etiqueta">Cuidado especial</span>
-        <h2>Línea diabético</h2>
-        <p>
-          Diseñada para personas con diabetes, ácido úrico o hinchazón de pies: sin costuras que rocen
-          la punta del pie y con un ajuste suave que ayuda a dispersar el sudor y mejorar la
-          circulación.
-        </p>
-        <ul className="listaCheck">
-          <li>Ayuda a dispersar el sudor y evitar la proliferación de hongos.</li>
-          <li>Mejora la circulación gracias a su ajuste suave, sin apretar.</li>
-          <li>Costura especial en la punta para evitar roces.</li>
-        </ul>
-      </BloqueDos>
+        </div>
+      </section>
+
+      <section className="seccion" id="diabetico-dama">
+        <div className="contenedor">
+          <BannerGaleriaProducto
+            claro
+            arriba
+            eyebrow="Cuidado especial"
+            titulo="Línea diabético dama"
+            descripcion="Pensada para pies sensibles: sin costuras que rocen la punta y con ajuste suave que ayuda a dispersar el sudor y mejorar la circulación."
+            materiales="65% Algodón, 25% Spandex y 10% Elástico"
+            fotos={FOTOS_DIABETICO_DAMA}
+          />
+        </div>
+      </section>
+
+      <section className="seccion" id="diabetico-caballero">
+        <div className="contenedor">
+          <BannerGaleriaProducto
+            claro
+            arriba
+            eyebrow="Cuidado especial"
+            titulo="Línea diabético caballero"
+            descripcion="Diseñada para pies sensibles: sin costuras que rocen la punta y con ajuste suave que ayuda a dispersar el sudor y mejorar la circulación."
+            materiales="65% Algodón, 25% Spandex y 10% Elástico"
+            fotos={FOTOS_DIABETICO_CABALLERO}
+          />
+        </div>
+      </section>
 
       <section className="seccion">
         <div className="contenedor">
