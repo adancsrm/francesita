@@ -75,6 +75,18 @@ export function construirGeometriaCalceta({
     }
   }
 
+  // Tapa de la punta: cierra el loft en un solo vértice (la punta ya llega
+  // casi a radio 0), como la continuación natural de los anillos, sin
+  // geometría aparte ni costuras.
+  const apiceIndex = posiciones.length / 3;
+  const centroPunta = curva.getPointAt(1);
+  posiciones.push(centroPunta.x, centroPunta.y, centroPunta.z);
+  uvs.push(2, 6);
+  const inicioUltimoAnillo = segmentos * columnas;
+  for (let j = 0; j < segmentosRadiales; j++) {
+    indices.push(inicioUltimoAnillo + j, apiceIndex, inicioUltimoAnillo + j + 1);
+  }
+
   const geometria = new THREE.BufferGeometry();
   geometria.setAttribute("position", new THREE.Float32BufferAttribute(posiciones, 3));
   geometria.setAttribute("uv", new THREE.Float32BufferAttribute(uvs, 2));
@@ -136,8 +148,9 @@ function generarLlavesPerfil(finPierna) {
     { t: pie(0.5), rx: 0.35, ryArriba: 0.22, ryAbajo: 0.29, offsetY: -0.02, offsetX: 0 },
     { t: pie(0.72), rx: 0.32, ryArriba: 0.19, ryAbajo: 0.25, offsetY: -0.015, offsetX: 0 },
     { t: pie(0.85), rx: 0.26, ryArriba: 0.16, ryAbajo: 0.2, offsetY: -0.01, offsetX: 0 },
-    { t: pie(0.94), rx: 0.18, ryArriba: 0.12, ryAbajo: 0.14, offsetY: -0.005, offsetX: 0 },
-    { t: 1.0, rx: 0.12, ryArriba: 0.09, ryAbajo: 0.1, offsetY: 0, offsetX: 0 },
+    { t: pie(0.93), rx: 0.19, ryArriba: 0.12, ryAbajo: 0.15, offsetY: -0.008, offsetX: 0 },
+    { t: pie(0.975), rx: 0.1, ryArriba: 0.07, ryAbajo: 0.08, offsetY: -0.004, offsetX: 0 },
+    { t: 1.0, rx: 0.02, ryArriba: 0.015, ryAbajo: 0.018, offsetY: 0, offsetX: 0 },
   ];
 }
 

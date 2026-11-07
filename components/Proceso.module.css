@@ -46,8 +46,8 @@
 .lista {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1.4rem;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1.1rem;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -78,6 +78,20 @@
   color: #d3d8ec;
 }
 
+.enlace {
+  position: relative;
+  margin-top: 2.6rem;
+}
+
+@media (max-width: 1200px) {
+  .lista {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.8rem;
+  }
+  .linea {
+    display: none;
+  }
+}
 @media (max-width: 1024px) {
   .lista {
     grid-template-columns: repeat(2, 1fr);

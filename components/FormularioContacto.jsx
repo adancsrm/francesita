@@ -7,6 +7,7 @@ export default function FormularioContacto() {
   const [errores, setErrores] = useState({});
   const [enviando, setEnviando] = useState(false);
   const [aviso, setAviso] = useState(null);
+  const [cargadoEn] = useState(() => Date.now());
 
   function validar(form) {
     const nuevos = {};
@@ -111,6 +112,7 @@ export default function FormularioContacto() {
         <label htmlFor="sitio_web">No llenar</label>
         <input type="text" id="sitio_web" name="sitio_web" tabIndex={-1} autoComplete="off" />
       </div>
+      <input type="hidden" name="cargado_en" value={cargadoEn} />
 
       <div className="grupoBotones" style={{ marginTop: "1.6rem" }}>
         <button className="btn btnAcento" type="submit" disabled={enviando}>

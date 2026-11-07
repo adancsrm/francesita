@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Reveal from "./Reveal";
 import Contador from "./Contador";
 import Hero3D from "./three/Hero3D";
@@ -8,7 +7,7 @@ export default function Hero() {
   return (
     <section id="hero-3d-ancla" className={styles.hero}>
       <div className={`contenedor ${styles.grid}`}>
-        <div>
+        <div className={styles.contenido}>
           <Reveal as="span" className="eyebrow" y={12}>
             Fabricantes desde 1998
           </Reveal>
@@ -16,22 +15,9 @@ export default function Hero() {
             <em className={styles.enfasis}>Calcetas Francés</em>
           </Reveal>
           <Reveal as="p" className={styles.texto} y={18} delay={0.12}>
-            Tejemos calcetas y calcetines de algodón peinado con lycra para
-            escuelas, uniformerías y distribuidores. Puño firme, talla exacta
-            y color institucional, par por par.
-          </Reveal>
-
-          <Reveal
-            className={`grupoBotones ${styles.botones}`}
-            y={18}
-            delay={0.18}
-          >
-            <Link className="btn btnAcento" href="/cotizacion">
-              Cotiza ahora
-            </Link>
-            <Link className="btn btnLinea" href="/productos">
-              Ver calcetas y calcetines
-            </Link>
+            Del hilo a la caja, fabricamos calcetas y calcetines de la más
+            alta calidad para todas las edades. ¿Tienes una marca o quieres
+            crear la tuya? Producimos con tu diseño y tu etiqueta.
           </Reveal>
 
           <Reveal
@@ -41,15 +27,15 @@ export default function Hero() {
             stagger={0.08}
           >
             <div>
-              <Contador className={styles.dato} valor="+25" />
-              <span>años tejiendo en México</span>
+              <Contador className={styles.dato} valor="+ 25 años" />
+              <span>tejiendo en México</span>
             </div>
             <div>
-              <Contador className={styles.dato} valor="50" />
-              <span>pares de pedido mínimo</span>
+              <Contador className={styles.dato} valor="20 docenas" />
+              <span>de pedido mínimo</span>
             </div>
             <div>
-              <Contador className={styles.dato} valor="24 h" />
+              <Contador className={styles.dato} valor="- 24 horas" />
               <span>para recibir tu cotización</span>
             </div>
           </Reveal>

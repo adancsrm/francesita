@@ -2,18 +2,20 @@ import CabeceraPagina from "@/components/CabeceraPagina";
 import FormularioContacto from "@/components/FormularioContacto";
 import PanelDatos from "@/components/PanelDatos";
 import Reveal from "@/components/Reveal";
+import { crearMetadatos } from "@/lib/metadatos";
 
-export const metadata = {
-  title: "Contacto | Francés, calcetas y calcetines escolares",
-  description:
+export const metadata = crearMetadatos({
+  titulo: "Contacto | Calcetas Francés, fábrica de calcetas y calcetines",
+  descripcion:
     "Escríbenos para pedidos, resurtidos o dudas sobre calcetas y calcetines Francés. Teléfono, correo y horario de atención en la Ciudad de México.",
-  alternates: { canonical: "/contacto" },
-};
+  ruta: "/contacto",
+  palabrasClave: ["contacto fábrica de calcetas", "pedidos de calcetines", "calcetas en Puebla"],
+});
 
 export default function Contacto() {
   return (
     <>
-      <CabeceraPagina miga="Contacto" eyebrow="Contacto" titulo="Habla con el equipo de Francés">
+      <CabeceraPagina miga="Contacto" eyebrow="Contacto" titulo="Contacto con calcetas Francés">
         Dudas sobre modelos, tallas, resurtidos o el estado de un pedido: escríbenos y te contestamos el
         mismo día hábil.
       </CabeceraPagina>
@@ -30,12 +32,16 @@ export default function Contacto() {
             </li>
             <li>
               <strong>Teléfono</strong>
-              <a href="tel:+522228836412">222 883 6412</a>
+              <a href="tel:+522486887054">248 688 7054</a>
             </li>
             <li>
               <strong>WhatsApp</strong>
               <a href="https://wa.me/522228836412" target="_blank" rel="noopener">
                 222 883 6412
+              </a>
+              <br />
+              <a href="https://wa.me/522221945818" target="_blank" rel="noopener">
+                222 194 5818
               </a>
             </li>
             <li>

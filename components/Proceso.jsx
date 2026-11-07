@@ -1,31 +1,41 @@
 "use client";
 
 import { useRef } from "react";
+import Link from "next/link";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "@/lib/gsap";
 import Reveal from "./Reveal";
 import styles from "./Proceso.module.css";
 
+// Resumen de las 7 etapas de /proceso (app/proceso/page.js)
 const PASOS = [
   {
-    titulo: "Cotización",
-    texto: "Nos dices modelo, tallas y cantidad. Te mandamos precio por par en 24 horas.",
+    titulo: "Maquinado",
+    texto: "Las máquinas circulares tejen la calceta en una sola pieza, del puño a la punta.",
   },
   {
-    titulo: "Muestra",
-    texto: "Tejemos una muestra física con tu color y escudo. La apruebas antes de producir.",
+    titulo: "Rematado",
+    texto: "Se cierra la punta con una costura fina y pareja que no lastima ni se abre.",
   },
   {
-    titulo: "Producción",
-    texto: "Entra a telar. De 10 a 15 días hábiles según el volumen del pedido.",
+    titulo: "Volteo",
+    texto: "Se pone al derecho, se retiran hilos sueltos y se hace una primera revisión.",
   },
   {
-    titulo: "Revisión",
-    texto: "Se revisa par por par: medida, color, remate y empaque.",
+    titulo: "Hormado",
+    texto: "Con calor y vapor se fija la forma, se asienta el tejido y se marca la talla.",
   },
   {
-    titulo: "Entrega",
-    texto: "Salida con guía de rastreo a toda la República o entrega directa en la Ciudad de México.",
+    titulo: "Pareo y etiquetado",
+    texto: "Revisión par por par de medida, color y remate. Se parea y se etiqueta.",
+  },
+  {
+    titulo: "Empaquetado",
+    texto: "Se empaca por modelo y talla para que llegue limpio y fácil de acomodar.",
+  },
+  {
+    titulo: "Envío",
+    texto: "Sale con guía de rastreo a toda la República o con entrega directa.",
   },
 ];
 
@@ -70,10 +80,10 @@ export default function Proceso() {
       <div className="contenedor">
         <Reveal className={styles.encabezado}>
           <span className="eyebrow">Cómo trabajamos</span>
-          <h2>De la cotización a la entrega, en cinco pasos</h2>
+          <h2>Del telar a tus manos, en siete etapas</h2>
           <p>
-            Cada paso tiene un responsable y una fecha. Así sabes exactamente
-            cuándo llegan tus calcetas.
+            Cada par pasa por siete etapas dentro de nuestro taller. Este es el
+            camino que recorre una calceta Francés.
           </p>
         </Reveal>
 
@@ -89,6 +99,10 @@ export default function Proceso() {
             ))}
           </ol>
         </div>
+
+        <Link className={`btn btnClaro ${styles.enlace}`} href="/proceso">
+          Conoce el proceso completo
+        </Link>
       </div>
     </section>
   );

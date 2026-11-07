@@ -1,0 +1,47 @@
+.espacioFoto {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  border: 2px dashed var(--linea);
+  border-radius: var(--radio);
+  background: var(--azul-tenue);
+  color: var(--tinta-suave);
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.espacioNumero {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--azul);
+  opacity: 0.35;
+}
+
+.video {
+  text-align: center;
+}
+
+.videoReproductor {
+  display: block;
+  /* El video es vertical (720×1280): se reserva su proporción para que la
+     portada y el video ocupen el mismo espacio y no salte el diseño. */
+  aspect-ratio: 9 / 16;
+  width: min(100%, calc(80vh * 9 / 16), 450px);
+  height: auto;
+  object-fit: cover;
+  margin: 1.5rem auto 0;
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  background: #000;
+}
+
+.espacioTexto {
+  font-size: var(--t-sm);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}

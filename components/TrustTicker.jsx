@@ -6,9 +6,10 @@ import { gsap } from "@/lib/gsap";
 import styles from "./TrustTicker.module.css";
 
 const ITEMS = [
-  "Tallas de la 12 a la 26",
-  "Color institucional a pedido",
-  "Escudo bordado o tejido",
+  "Diferentes tallas",
+  "Color a pedido",
+  "Escudo tejido",
+  "Fabricamos tu marca",
   "Envíos a toda la República",
 ];
 
