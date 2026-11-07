@@ -1,6 +1,18 @@
 .encabezado {
-  max-width: 62ch;
   margin-bottom: 2.6rem;
+}
+
+/* Una sola línea a todo el ancho; Testimonios.jsx calcula el tamaño de letra */
+.titulo {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+@media (max-width: 680px) {
+  .titulo {
+    display: block;
+    white-space: normal;
+  }
 }
 
 .carrusel {

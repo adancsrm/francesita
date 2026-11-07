@@ -13,15 +13,14 @@ export default function Footer() {
             <div className={styles.logo}>
               <Image
                 src="/img/LogoFrances.jpeg"
-                alt="Logotipo de Francés"
-                width={88}
-                height={48}
+                alt="Logotipo de Francés, fábrica de calcetas y calcetines"
+                width={132}
+                height={72}
               />
-              <span>Francés</span>
             </div>
             <p>
               Fabricamos calcetas y calcetines escolares en México, con
-              algodón peinado y lycra, para escuelas, uniformerías y
+              algodón y lycra, para escuelas, uniformerías y
               distribuidores de todo el país.
             </p>
             <div className={styles.redes}>
@@ -64,6 +63,9 @@ export default function Footer() {
                 <Link href="/cotizacion">Cotización</Link>
               </li>
               <li>
+                <Link href="/proceso">Proceso</Link>
+              </li>
+              <li>
                 <Link href="/contacto">Contacto</Link>
               </li>
             </ul>
@@ -73,25 +75,25 @@ export default function Footer() {
             <h3>Productos</h3>
             <ul>
               <li>
-                <Link href="/productos#caballero">Calcetas caballero</Link>
+                <Link href="/productos/dama">Dama</Link>
               </li>
               <li>
-                <Link href="/productos#kathy-dama">Calcetas Kathy dama</Link>
+                <Link href="/productos/caballero">Caballero</Link>
               </li>
               <li>
-                <Link href="/productos#calcetin-nino">Calcetín niño</Link>
+                <Link href="/productos/ninos">Niños</Link>
               </li>
               <li>
-                <Link href="/productos#tin-dama">Tin Dama</Link>
+                <Link href="/productos/dama#tin-dama">Tin Dama</Link>
               </li>
               <li>
-                <Link href="/productos#escolar-nina">Calceta escolar niña</Link>
+                <Link href="/productos/dama#kathy-dama">Calcetas Kathy dama</Link>
               </li>
               <li>
-                <Link href="/productos#diabetico-dama">Línea diabético dama</Link>
+                <Link href="/productos/ninos#calcetin-nino">Calcetín niño</Link>
               </li>
               <li>
-                <Link href="/productos#diabetico-caballero">Línea diabético caballero</Link>
+                <Link href="/productos/ninos#escolar-nina">Calceta escolar niña</Link>
               </li>
             </ul>
           </div>
@@ -105,11 +107,16 @@ export default function Footer() {
                 <span className={styles.suave}>Plus Code 7CQQ+53M</span>
               </li>
               <li>
-                <a href="tel:+522228836412">222 883 6412</a>
+                <a href="tel:+522486887054">248 688 7054</a>
               </li>
               <li>
                 <a href="https://wa.me/522228836412" target="_blank" rel="noopener">
                   WhatsApp 222 883 6412
+                </a>
+              </li>
+              <li>
+                <a href="https://wa.me/522221945818" target="_blank" rel="noopener">
+                  WhatsApp 222 194 5818
                 </a>
               </li>
               <li>

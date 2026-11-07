@@ -9,7 +9,7 @@ const GUION = [
     chip: "Ver productos",
     claves: ["producto", "catalogo", "catálogo", "calceta", "calcetin", "calcetín", "modelo", "tipo"],
     respuesta:
-      'Manejamos calcetas escolares, tobilleras, calcetas altas y calcetines de vestir para caballero y dama, en algodón peinado con lycra. Puedes verlos todos en <a href="/productos">Productos</a>.',
+      'Manejamos calcetas escolares, tobilleras, calcetas altas y calcetines de vestir para caballero y dama, en algodón con lycra. Puedes verlos todos en <a href="/productos">Productos</a>.',
   },
   {
     chip: "Cotizar",
@@ -27,7 +27,7 @@ const GUION = [
     chip: "Pedido mínimo",
     claves: ["minimo", "mínimo", "docena", "cantidad", "pares"],
     respuesta:
-      "El pedido mínimo es de 50 pares por modelo y color. Para colores institucionales o logotipo bordado, el mínimo es de 200 pares.",
+      "El pedido mínimo es de 20 docenas por modelo y color. Para colores institucionales o logotipo bordado, el mínimo es de 200 pares.",
   },
   {
     chip: "Personalización",
@@ -45,13 +45,13 @@ const GUION = [
     chip: "Contacto",
     claves: ["contacto", "telefono", "teléfono", "correo", "whatsapp", "direccion", "dirección", "horario", "hablar"],
     respuesta:
-      'Estamos de lunes a viernes de 9:00 a 18:00 y sábados de 9:00 a 14:00. Escríbenos por <a href="/contacto">el formulario de contacto</a>, por WhatsApp al <a href="https://wa.me/522228836412" target="_blank" rel="noopener">222 883 6412</a> o al correo ventas@calcetasfrances.com.',
+      'Estamos de lunes a viernes de 9:00 a 18:00 y sábados de 9:00 a 14:00. Escríbenos por <a href="/contacto">el formulario de contacto</a>, por WhatsApp al <a href="https://wa.me/522228836412" target="_blank" rel="noopener">222 883 6412</a> o al <a href="https://wa.me/522221945818" target="_blank" rel="noopener">222 194 5818</a>, por teléfono al <a href="tel:+522486887054">248 688 7054</a> o al correo ventas@calcetasfrances.com.',
   },
   {
     chip: "Materiales",
     claves: ["material", "algodon", "algodón", "lycra", "tela", "calidad", "compos"],
     respuesta:
-      "Tejemos con algodón peinado (70–80%), poliéster y lycra elastano. El resultado: calcetas que no se vencen del puño y aguantan el uso diario y el lavado constante.",
+      "Tejemos con algodón (70–80%), poliéster y lycra elastano. El resultado: calcetas que no se vencen del puño y aguantan el uso diario y el lavado constante.",
   },
 ];
 

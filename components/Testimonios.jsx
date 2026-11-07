@@ -1,12 +1,24 @@
 "use client";
 
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap, Draggable } from "@/lib/gsap";
 import Reveal from "./Reveal";
 import styles from "./Testimonios.module.css";
 
 const TESTIMONIOS = [
+  {
+    texto:
+      "Surtimos a varias uniformerías de la región y con Francés el color sale igual pedido tras pedido. Mis clientes ya no me piden otra marca.",
+    nombre: "Alonso Gutiérrez",
+    rol: "Distribuidor, Hidalgo",
+  },
+  {
+    texto:
+      "Los pedidos llegan completos, bien empacados por talla y en la fecha acordada. Eso me permite surtir a tiempo en temporada alta.",
+    nombre: "Erick Sánchez",
+    rol: "Distribuidor, Puebla",
+  },
   {
     texto:
       "Llevamos cuatro ciclos con las mismas calcetas y las mamás ya no reclaman que se vencen del puño. Eso para nosotros lo dice todo.",
@@ -31,7 +43,42 @@ export default function Testimonios() {
   const viewport = useRef(null);
   const pista = useRef(null);
   const draggableRef = useRef(null);
+  const titulo = useRef(null);
   const [activo, setActivo] = useState(0);
+
+  // Ajusta el tamaño del título para que ocupe, en una sola línea, todo el
+  // ancho del contenedor. En celular se deja el tamaño normal con saltos de línea.
+  useEffect(() => {
+    const el = titulo.current;
+    const padre = el?.parentElement;
+    if (!el || !padre) return;
+    const movil = window.matchMedia("(max-width: 680px)");
+
+    const ajustar = () => {
+      el.style.fontSize = "";
+      if (movil.matches) return;
+      const base = parseFloat(getComputedStyle(el).fontSize);
+      const ancho = el.offsetWidth;
+      if (!ancho) return;
+      el.style.fontSize = `${Math.floor(((base * padre.clientWidth * 0.995) / ancho) * 10) / 10}px`;
+    };
+
+    ajustar();
+    document.fonts?.ready.then(ajustar);
+    // Solo recalcula cuando cambia el ancho (el alto cambia al ajustar la letra)
+    let anchoPrevio = padre.clientWidth;
+    const observador = new ResizeObserver(() => {
+      if (padre.clientWidth === anchoPrevio) return;
+      anchoPrevio = padre.clientWidth;
+      ajustar();
+    });
+    observador.observe(padre);
+    movil.addEventListener("change", ajustar);
+    return () => {
+      observador.disconnect();
+      movil.removeEventListener("change", ajustar);
+    };
+  }, []);
 
   const irA = useCallback((i) => {
     const drag = draggableRef.current;
@@ -97,7 +144,9 @@ export default function Testimonios() {
       <div className="contenedor">
         <Reveal className={styles.encabezado}>
           <span className="eyebrow">Lo que dicen nuestros clientes</span>
-          <h2>Escuelas y uniformerías que ya surten con Francés</h2>
+          <h2 ref={titulo} className={styles.titulo}>
+            Distribuidores, escuelas y uniformerías que ya surten con Francés
+          </h2>
         </Reveal>
 
         <div className={styles.carrusel}>

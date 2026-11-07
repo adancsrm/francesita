@@ -11,14 +11,24 @@ import styles from "./Header.module.css";
 const ENLACES = [
   { href: "/", label: "Inicio" },
   { href: "/nosotros", label: "Nosotros" },
-  { href: "/productos", label: "Productos" },
+];
+
+const CATEGORIAS_PRODUCTOS = [
+  { href: "/productos/dama", label: "Dama" },
+  { href: "/productos/caballero", label: "Caballero" },
+  { href: "/productos/ninos", label: "Niños" },
+];
+
+const ENLACES_FINALES = [
   { href: "/cotizacion", label: "Cotización" },
+  { href: "/proceso", label: "Proceso" },
   { href: "/contacto", label: "Contacto" },
 ];
 
 export default function Header() {
   const [fijo, setFijo] = useState(false);
   const [abierto, setAbierto] = useState(false);
+  const [submenuOculto, setSubmenuOculto] = useState(false);
   const barra = useRef(null);
   const pathname = usePathname();
 
@@ -38,13 +48,21 @@ export default function Header() {
     });
   }, []);
 
+  // Al elegir una categoría se cierra el submenú (hover/focus lo mantendrían abierto)
+  // y el menú móvil. Se vuelve a habilitar cuando el cursor sale del ítem.
+  const elegirCategoria = (e) => {
+    setSubmenuOculto(true);
+    setAbierto(false);
+    e.currentTarget.blur();
+  };
+
   return (
     <header className={`${styles.header} ${fijo ? styles.fijo : ""}`}>
       <div className={`contenedor ${styles.barraNav}`}>
         <Link className={styles.logo} href="/" aria-label="Francés, inicio">
           <Image
             src="/img/LogoFrances.jpeg"
-            alt="Logotipo de Francés"
+            alt="Logotipo de Francés, fábrica de calcetas y calcetines"
             width={180} //88
             height={98} //44
             priority
@@ -54,6 +72,40 @@ export default function Header() {
         <nav aria-label="Navegación principal">
           <ul className={`${styles.menu} ${abierto ? styles.abierto : ""}`}>
             {ENLACES.map((e) => (
+              <li key={e.href}>
+                <Link href={e.href} aria-current={pathname === e.href ? "page" : undefined}>
+                  {e.label}
+                </Link>
+              </li>
+            ))}
+
+            <li
+              className={`${styles.itemProductos} ${submenuOculto ? styles.submenuOculto : ""}`}
+              onMouseLeave={() => setSubmenuOculto(false)}
+            >
+              <Link
+                href="/productos"
+                aria-current={pathname === "/productos" ? "page" : undefined}
+                aria-haspopup="true"
+              >
+                Productos
+              </Link>
+              <ul className={styles.submenu}>
+                {CATEGORIAS_PRODUCTOS.map((c) => (
+                  <li key={c.href}>
+                    <Link
+                      href={c.href}
+                      aria-current={pathname === c.href ? "page" : undefined}
+                      onClick={elegirCategoria}
+                    >
+                      {c.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </li>
+
+            {ENLACES_FINALES.map((e) => (
               <li key={e.href}>
                 <Link href={e.href} aria-current={pathname === e.href ? "page" : undefined}>
                   {e.label}

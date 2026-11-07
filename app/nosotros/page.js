@@ -6,13 +6,19 @@ import BloqueDos from "@/components/BloqueDos";
 import { MediaImagen } from "@/components/Media";
 import CtaFinal from "@/components/CtaFinal";
 import styles from "./page.module.css";
+import { crearMetadatos } from "@/lib/metadatos";
 
-export const metadata = {
-  title: "Quiénes somos: misión, visión e historia | Francés",
-  description:
+export const metadata = crearMetadatos({
+  titulo: "Quiénes somos: misión, visión e historia | Calcetas Francés",
+  descripcion:
     "Conoce la misión, visión e historia de Francés: taller mexicano de tejido de punto especializado en calcetas escolares y calcetines de algodón con lycra.",
-  alternates: { canonical: "/nosotros" },
-};
+  ruta: "/nosotros",
+  imagen: {
+    url: "/img/quienesSomosLuz.jpg",
+    alt: "Taller de tejido de Francés, hileras de máquinas circulares tejiendo calcetas",
+  },
+  palabrasClave: ["fábrica mexicana de calcetas", "taller de calcetines", "historia de Francés calcetas"],
+});
 
 export default function Nosotros() {
   return (
@@ -31,7 +37,7 @@ export default function Nosotros() {
                   <p>
                     Fabricar y distribuir calcetas de calidad que combinen comodidad, durabilidad y
                     estilo, ofreciendo productos accesibles para cada necesidad. Trabajamos para brindar
-                    un servicio confiable y cercano, atendiendo tanto al consumidor individual como a
+                    un producto confiable y un trato cercano, atendiendo tanto al consumidor individual como a
                     nuestros clientes mayoristas, contribuyendo al crecimiento de sus negocios y llevando
                     nuestros productos a cada vez más personas.
                   </p>
@@ -70,7 +76,7 @@ export default function Nosotros() {
         <span className="eyebrow">Nuestra historia</span>
         <h2>De un taller familiar a proveedor de escuelas</h2>
         <p>
-          Francés empezó con dos telares y un pedido pequeño para la escuela del barrio. Las mamás
+          Francés empezó en 1994 con dos telares y un pedido pequeño para la escuela del barrio. Las mamás
           regresaban por más porque las calcetas duraban el ciclo completo, y esa recomendación de boca
           en boca fue el primer catálogo que tuvimos.
         </p>
@@ -79,20 +85,14 @@ export default function Nosotros() {
           criterio del primer día: si una calceta no pasaría en el uniforme de nuestros hijos, no sale
           de la fábrica.
         </p>
-        <p className={styles.nota}>
-          <em>
-            Nota para el cliente: este texto es una propuesta editorial. Cuéntanos el año de fundación y
-            los datos reales de la empresa y lo ajustamos.
-          </em>
-        </p>
       </BloqueDos>
 
       <BloqueDos
         media={
           <MediaImagen
             src="/img/Nosotros.jpg"
-            alt="Variedad de calcetines Francés en negro, azul marino, gris y blanco, tejidos con algodón peinado y lycra"
-            aspecto="1127 / 1111"
+            alt="Calcetas y calcetines Francés tejidos con algodón y lycra"
+            aspecto="1792 / 2390"
           />
         }
       >
@@ -104,7 +104,7 @@ export default function Nosotros() {
         </p>
         <ul className="listaCheck">
           <li>
-            <strong>Algodón peinado 70–80%.</strong> Absorbe humedad, respira y no raspa la piel.
+            <strong>Algodón 70–80%.</strong> Absorbe humedad, respira y no raspa la piel.
           </li>
           <li>
             <strong>Poliéster.</strong> Da cuerpo al tejido y sostiene el color lavada tras lavada.

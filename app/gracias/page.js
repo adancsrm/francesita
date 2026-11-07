@@ -3,7 +3,7 @@ import CabeceraPagina from "@/components/CabeceraPagina";
 import Reveal from "@/components/Reveal";
 
 export const metadata = {
-  title: "Gracias por tu solicitud | Francés",
+  title: "Gracias por tu solicitud | Calcetas Francés",
   description: "Recibimos tu solicitud de cotización. El equipo de Francés te contactará en menos de 24 horas hábiles.",
   robots: { index: false, follow: false },
 };

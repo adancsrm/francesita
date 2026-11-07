@@ -3,8 +3,8 @@
 import { useMemo } from "react";
 import * as THREE from "three";
 import { Float } from "@react-three/drei";
-import { construirGeometriaCalceta, curvaCalceta, perfilCalceta, PUNTA_CALCETA } from "./sockGeometry";
-import { texturaTejido } from "./knitTexture";
+import { construirGeometriaCalceta, curvaCalceta, perfilCalceta } from "./sockGeometry";
+import { texturaTejido, texturaPatronCalceta } from "./knitTexture";
 
 /**
  * Calceta 3D procedural (sin Blender): la malla se "loftea" a mano a lo
@@ -24,6 +24,8 @@ export default function SockModel({
   scale = 1,
   piernaLarga = false,
   liso = false,
+  patron = false,
+  colorMotivo = "#C9C67A",
   float = true,
   floatSpeed = 1,
   floatIntensity = 1,
@@ -39,6 +41,11 @@ export default function SockModel({
   }, [piernaLarga]);
 
   const relieve = useMemo(() => texturaTejido(), []);
+  const patronMapa = useMemo(
+    () => (patron ? texturaPatronCalceta({ base: color, motivo: colorMotivo }) : null),
+    [patron, color, colorMotivo],
+  );
+  const colorCuerpo = patronMapa ? "#ffffff" : color;
 
   const colorPuño = liso ? color : cuffColor;
   const alturaPuño = piernaLarga ? 2.37 : 1.32;
@@ -49,7 +56,8 @@ export default function SockModel({
       {/* pierna + tobillo + pie */}
       <mesh geometry={cuerpoGeo} castShadow receiveShadow>
         <meshPhysicalMaterial
-          color={color}
+          color={colorCuerpo}
+          map={patronMapa}
           roughness={0.6}
           roughnessMap={relieve}
           bumpMap={relieve}
@@ -62,30 +70,12 @@ export default function SockModel({
         />
       </mesh>
 
-      {/* punta: casquete que redondea el cierre del loft, menos picuda */}
-      <mesh
-        position={[PUNTA_CALCETA.x, PUNTA_CALCETA.y + 0.01, PUNTA_CALCETA.z - 0.04]}
-        scale={[0.95, 0.82, 0.8]}
-        castShadow
-      >
-        <sphereGeometry args={[0.115, 18, 18]} />
-        <meshPhysicalMaterial
-          color={color}
-          roughness={0.6}
-          roughnessMap={relieve}
-          bumpMap={relieve}
-          bumpScale={0.006}
-          sheen={1}
-          sheenColor={color}
-          sheenRoughness={0.75}
-        />
-      </mesh>
-
       {/* talón: bulto detrás del tobillo */}
       <mesh position={[0.015, -0.3, 0.08]} scale={[0.85, 0.7, 0.75]} castShadow>
         <sphereGeometry args={[0.27, 20, 20]} />
         <meshPhysicalMaterial
-          color={color}
+          color={colorCuerpo}
+          map={patronMapa}
           roughness={0.6}
           roughnessMap={relieve}
           bumpMap={relieve}

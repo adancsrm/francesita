@@ -39,7 +39,9 @@ function Escena({ reducido }) {
 
   return (
     <>
-      <PerspectiveCamera makeDefault position={[0, 0.35, 4.4]} fov={32} />
+      {/* fov 35 = 10% más de altura visible que 32°. El marco 12:11 de .figura añade ~0.5 de ancho visible;
+          x = -0.25 lo carga todo a la izquierda para que no se corte la calceta pequeña */}
+      <PerspectiveCamera makeDefault position={[-0.25, 0.35, 4.4]} fov={35} />
       <ambientLight intensity={0.65} />
       <directionalLight position={[3, 4, 2]} intensity={1.4} color="#FFF6E8" castShadow />
       <pointLight position={[-3, 1, -2]} intensity={6} color="#EC1F26" />
@@ -47,12 +49,14 @@ function Escena({ reducido }) {
 
       <group ref={rig} position={[0, -0.35, 0]}>
         <PointerRig intensity={reducido ? 0 : 0.28}>
-          {/* Par de calcetas escolares lisas, blancas, hasta la rodilla */}
+          {/* Par de calcetas escolares, azul marino con motivo, como calcetaMuestra.jpeg */}
           <SockModel
-            color="#F1F3F2"
-            cuffColor="#F1F3F2"
+            color="#2A3868"
+            cuffColor="#2A3868"
+            colorMotivo="#E4DE9B"
             piernaLarga
             liso
+            patron
             scale={0.7}
             position={[0.35, -0.05, 0]}
             rotation={[0, 0.45, 0.06]}
@@ -60,10 +64,12 @@ function Escena({ reducido }) {
             floatSpeed={0.9}
           />
           <SockModel
-            color="#F1F3F2"
-            cuffColor="#F1F3F2"
+            color="#2A3868"
+            cuffColor="#2A3868"
+            colorMotivo="#E4DE9B"
             piernaLarga
             liso
+            patron
             scale={0.5}
             position={[-1.1, -0.05, -0.5]}
             rotation={[0.05, -0.5, -0.1]}

@@ -10,23 +10,37 @@ export default function Nosotros() {
       <div className={`contenedor ${styles.grid}`}>
         <Reveal x={-32} y={0}>
           <span className="eyebrow">Quiénes somos</span>
-          <h2>Una fábrica mexicana dedicada solo a calcetas y calcetines</h2>
+          <h2>Calcetas hechas en México, con más de 25 años de oficio.</h2>
           <p>
-            Francés nació como un taller familiar de tejido de punto y hoy
-            surte a escuelas y uniformerías de varios estados del país.
-            Hacemos una sola cosa y la hacemos completa: del hilo a la caja,
-            sin intermediarios.
+            Francés nació como un taller familiar y hoy es una fábrica que
+            surte a marcas, distribuidores y escuelas de todo el país. Hacemos
+            una sola cosa, y la hacemos completa: del hilo a la caja, sin
+            intermediarios.
           </p>
+          <h3 className={styles.subtitulo}>Por qué elegirnos</h3>
           <ul className={styles.lista}>
             <li>
-              Algodón peinado de 70 a 80% para que la calceta respire y no dé
-              comezón.
+              <strong>Materiales de alta calidad.</strong> Seleccionamos cada
+              hilo pensando en la comodidad y la durabilidad.
             </li>
             <li>
-              Lycra en el puño para que no se venza a media jornada escolar.
+              <strong>Revisión par por par.</strong> Cada calceta se
+              inspecciona antes de empacarse.
             </li>
-            <li>Revisión par por par antes de empacar.</li>
+            <li>
+              <strong>Fabricación 100% mexicana.</strong> Control total del
+              proceso, con tiempos y precios directos de fábrica.
+            </li>
+            <li>
+              <strong>Te ayudamos a crear tu marca.</strong> Si quieres vender
+              calcetas con tu propio nombre, te acompañamos desde el diseño
+              hasta la entrega.
+            </li>
           </ul>
+          <p className={styles.cierre}>
+            ¿Listo para trabajar con nosotros?{" "}
+            <Link href="/cotizacion">Escríbenos y cotiza hoy.</Link>
+          </p>
           <Link className="btn btnLinea" href="/nosotros">
             Ver más sobre Francés
           </Link>
@@ -35,8 +49,8 @@ export default function Nosotros() {
         <Reveal x={32} y={0} delay={0.1} className={styles.mediaWrap}>
           <TiltCard className={styles.media} intensity={6}>
             <Image
-              src="/img/EscolarFrancesitaNinas-blanco.jpeg"
-              alt="Producción de calcetas Francesita en México"
+              src="/img/InicioFabrica.jpg"
+              alt="Fábrica de calcetas, calcetines y tines Francés en México"
               fill
               sizes="(max-width: 680px) 100vw, 50vw"
               className={styles.imagen}
